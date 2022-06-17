@@ -9,4 +9,5 @@ add_executable(
     ./src/main.c
     ./src/clock.c
     ./src/buscas.c
+    ./src/ordenacoes.c
 )
