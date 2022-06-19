@@ -66,3 +66,13 @@ long int clockSelectionSort(int* vetor, unsigned int n){
 
     return time;     
 }
+
+long int clockInsertionSort(int* vetor, unsigned int n){
+    clock_t time;
+
+    time = clock(); // Inicia a contagem
+    insertionSort(vetor, n);
+    time = clock() - time; // Finaliza a contagem
+
+    return time;      
+}

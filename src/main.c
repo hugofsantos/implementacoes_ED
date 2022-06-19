@@ -32,5 +32,9 @@ int main(void){
     time = clockSelectionSort(vetorSort, VSORT_SIZE);
     printf("Tempo de execução do selection sort: %ld\n", time);
 
+    preencherVetorDesc(vetorSort, VSORT_SIZE);
+    time = clockInsertionSort(vetorSort, VSORT_SIZE);
+    printf("Tempo de execução do insertion sort: %ld\n", time);
+
     return 0;
 }
