@@ -25,4 +25,12 @@ void bubbleSort(int* vetor, unsigned int n);
  */
 void selectionSort(int* vetor, unsigned int n);
 
+/**
+ * @brief Ordena o vetor com insertion sort
+ * 
+ * @param vetor Vetor a ser ordenado
+ * @param n Tamanho do vetor
+ */
+void insertionSort(int* vetor, unsigned int n);
+
 #endif

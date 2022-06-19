@@ -34,3 +34,10 @@ void selectionSort(int* vetor, unsigned int n){
         trocarValores(&vetor[i], &vetor[iMenor]);
     }
 }
+
+void insertionSort(int* vetor, unsigned int n){
+    for(unsigned int i = 1; i < n; i++){
+        for(unsigned int j = i; j > 0 && vetor[j]<vetor[j-1]; j--)
+            trocarValores(&vetor[j], &vetor[j-1]);
+    }
+}
