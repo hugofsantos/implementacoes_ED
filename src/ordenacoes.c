@@ -1,4 +1,5 @@
 #include "ordenacoes.h"
+#include <stdio.h>
 
 void trocarValores(int *n1, int *n2){
     int temp = *n1;
@@ -40,4 +41,34 @@ void insertionSort(int* vetor, unsigned int n){
         for(unsigned int j = i; j > 0 && vetor[j]<vetor[j-1]; j--)
             trocarValores(&vetor[j], &vetor[j-1]);
     }
+}
+
+unsigned int separacaoQuickSort(int* vetor, unsigned int n, unsigned int pivot){
+    unsigned int pp = 0;
+    unsigned int qq = n-1;
+
+    while(pp < qq){
+        while(vetor[pp]<=vetor[pivot] && pp < n-1) pp++;
+        while(vetor[qq]>vetor[pivot]) qq--;
+
+        if(pp < qq) trocarValores(&vetor[pp++], &vetor[qq--]);
+
+        if(pp == pivot) return pp;
+    }
+
+    trocarValores(&vetor[pivot], &vetor[qq]);
+
+    return qq;
+}
+
+void quickSort(int* vetor, unsigned int n, unsigned int pivot){
+    if(n<=0) return;
+
+    unsigned int meio = separacaoQuickSort(vetor, n, pivot);
+
+    const unsigned int pivotMeio1 = (pivot * meio)/n;
+    const unsigned int pivotMeio2 = (pivot * (n-1-meio))/n;
+
+    quickSort(vetor, meio, pivotMeio1); // Ordena primeira metade do vetor separado
+    quickSort(vetor + meio + 1, n-1-meio, pivotMeio2); // Ordena segunda metade do vetor separado
 }
