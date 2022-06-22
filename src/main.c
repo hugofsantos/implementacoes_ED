@@ -36,5 +36,13 @@ int main(void){
     time = clockInsertionSort(vetorSort, VSORT_SIZE);
     printf("Tempo de execução do insertion sort: %ld\n", time);
 
+    preencherVetorDesc(vetorSort, VSORT_SIZE);//preencherVetorDesc(vetorSort, VSORT_SIZE);
+    time = clockQuickSort(vetorSort, VSORT_SIZE, VSORT_SIZE/2);
+    printf("Tempo de execução do quick sort no melhor caso: %ld\n", time);
+
+    preencherVetorDesc(vetorSort, VSORT_SIZE);
+    time = clockQuickSort(vetorSort, VSORT_SIZE, 0);
+    printf("Tempo de execução do quick sort no pior caso: %ld\n", time);
+
     return 0;
 }

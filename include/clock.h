@@ -72,4 +72,15 @@ long int clockSelectionSort(int* vetor, unsigned int n);
  */
 long int clockInsertionSort(int* vetor, unsigned int n);
 
+/**
+ * @brief Calcula o tempo de execução do quick sort
+ * 
+ * @param vetor Vetor a ser ordenado
+ * @param n Tamanho do vetor
+ * @param pivot Posição do pivot na ordenação
+ * 
+ * @return long int referente ao tempo em ms da execução da função
+ */
+long int clockQuickSort(int* vetor, unsigned int n, unsigned int pivot);
+
 #endif

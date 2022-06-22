@@ -76,3 +76,13 @@ long int clockInsertionSort(int* vetor, unsigned int n){
 
     return time;      
 }
+
+long int clockQuickSort(int* vetor, unsigned int n, unsigned int pivot){
+    clock_t time;
+
+    time = clock(); // Inicia a contagem
+    quickSort(vetor, n, pivot);
+    time = clock() - time; // Finaliza a contagem
+
+    return time;  
+}
