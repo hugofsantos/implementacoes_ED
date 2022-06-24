@@ -1,5 +1,6 @@
 #include "ordenacoes.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 void trocarValores(int *n1, int *n2){
     int temp = *n1;
@@ -71,4 +72,37 @@ void quickSort(int* vetor, unsigned int n, unsigned int pivot){
 
     quickSort(vetor, meio, pivotMeio1); // Ordena primeira metade do vetor separado
     quickSort(vetor + meio + 1, n-1-meio, pivotMeio2); // Ordena segunda metade do vetor separado
+}
+
+void juncaoMergeSort(int* vetor, unsigned int m, unsigned int n){
+    unsigned int iTemp = 0; // Valor do índice atual do vetor temporário
+    unsigned int iMet1 = 0; // Valor do índice atual da primeira metade do vetor
+    unsigned int iMet2 = m; // Valor do índice atual da segunda metade do vetor
+
+    int* tmp = (int*) malloc(sizeof(int) * n);
+
+    while(iMet1 < m && iMet2 < n){
+        if(vetor[iMet1] <= vetor[iMet2]) tmp[iTemp++] = vetor[iMet1++];
+        else tmp[iTemp++] = vetor[iMet2++];
+    }
+
+    while(iMet1 < m) tmp[iTemp++] = vetor[iMet1++];
+    while(iMet2 < n) tmp[iTemp++] = vetor[iMet2++];
+
+    for(unsigned int i = 0; i < n; i++){
+        vetor[i] = tmp[i];
+    }
+
+    free(tmp);
+}
+
+void mergeSort(int* vetor, unsigned int n){
+    if(n <= 1) return;
+
+    unsigned int meio = n/2;
+
+    mergeSort(vetor, meio);
+    mergeSort(vetor+meio, n-meio);
+
+    juncaoMergeSort(vetor, meio, n);
 }

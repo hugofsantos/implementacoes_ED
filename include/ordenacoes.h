@@ -53,5 +53,21 @@ unsigned int separacaoQuickSort(int* vetor, unsigned int n, unsigned int pivot);
  */
 void quickSort(int* vetor, unsigned int n, unsigned int pivot);
 
+/**
+ * @brief Faz a junção de dois vetores separados e ordenados
+ * 
+ * @param vetor Endereço de memória do início do vetor
+ * @param m Tamanho completo do vetor
+ * @param n Endereço de memória da segunda metade do vetor
+ */
+void juncaoMergeSort(int* vetor, unsigned int m, unsigned int n);
+
+/**
+ * @brief Ordena o vetor com merge sort
+ * 
+ * @param vetor Vetor a ser ordenado
+ * @param n Tamanho do vetor
+ */
+void mergeSort(int* vetor, unsigned int n);
 
 #endif
