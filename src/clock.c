@@ -86,3 +86,13 @@ long int clockQuickSort(int* vetor, unsigned int n, unsigned int pivot){
 
     return time;  
 }
+
+long int clockMergeSort(int* vetor, unsigned int n){
+    clock_t time;
+
+    time = clock(); // Inicia a contagem
+    mergeSort(vetor, n);
+    time = clock() - time; // Finaliza a contagem
+
+    return time;         
+}

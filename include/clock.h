@@ -83,4 +83,13 @@ long int clockInsertionSort(int* vetor, unsigned int n);
  */
 long int clockQuickSort(int* vetor, unsigned int n, unsigned int pivot);
 
+/**
+ * @brief Calcula o tempo de execução do merge sort
+ * 
+ * @param vetor Vetor a ser ordenado
+ * @param n Tamanho do vetor
+ * @return long int referente ao tempo em ms da execução da função
+ */
+long int clockMergeSort(int* vetor, unsigned int n);
+
 #endif

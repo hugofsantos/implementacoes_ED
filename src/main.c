@@ -44,5 +44,9 @@ int main(void){
     time = clockQuickSort(vetorSort, VSORT_SIZE, 0);
     printf("Tempo de execução do quick sort no pior caso: %ld\n", time);
 
+    preencherVetorDesc(vetorSort, VSORT_SIZE);
+    time = clockMergeSort(vetorSort, VSORT_SIZE);
+    printf("Tempo de execução do quick sort: %ld\n", time);
+
     return 0;
 }
