@@ -1,6 +1,8 @@
 #ifndef Clock_H
 #define Clock_H
 
+#include "sequencias.h"
+
 /**
  * @brief Preenche um vetor com números inteiros consecutivos (1, 2, 3, 4...)
  * 
@@ -91,5 +93,33 @@ long int clockQuickSort(int* vetor, unsigned int n, unsigned int pivot);
  * @return long int referente ao tempo em ms da execução da função
  */
 long int clockMergeSort(int* vetor, unsigned int n);
+
+/**
+ * @brief Calcula o tempo de execução da remoção de um valor em uma sequência implementada como vetor
+ * 
+ * @param sequencia Sequência a ser removido o valor
+ * @param posicao Posição a ser removido da sequência (0, 1, 2...)
+ * @return long int referente ao tempo em ms de execução da função
+ */
+long int clockRemocaoValorSeqV(SequenciaVetor *sequencia, unsigned int posicao);
+
+/**
+ * @brief Calcula o tempo de execução da remoção de um valor em uma sequência implementada como vetor
+ * 
+ * @param sequencia Sequência a ser inserido o valor
+ * @param valor Valor a ser inserido
+ * @param posicao Posição a ser inserido da sequência (0, 1, 2...)
+ * @return long int referente ao tempo em ms de execução da função
+ */
+long int clockInsercaoValorSeqV(SequenciaVetor *sequencia, int valor, int posicao);
+
+/**
+ * @brief Calcula o tempo  de execução da busca e um valor em uma sequência implementada com vetor
+ * 
+ * @param sequencia referência para a sequência em que você irá buscar o valor
+ * @param posicao Posição do valor que você quer acessar
+ * @return int Valor buscado (ou 0 se a posição não for válida) 
+ */
+long int clockAcessoValorSeqV(SequenciaVetor *sequencia, int posicao);
 
 #endif

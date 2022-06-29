@@ -1,6 +1,7 @@
 #include "clock.h"
 #include "buscas.h"
 #include "ordenacoes.h"
+#include "sequencias.h"
 
 #include <time.h>
 #include <stdio.h>
@@ -95,4 +96,34 @@ long int clockMergeSort(int* vetor, unsigned int n){
     time = clock() - time; // Finaliza a contagem
 
     return time;         
+}
+
+long int clockRemocaoValorSeqV(SequenciaVetor *sequencia, unsigned int posicao){
+    clock_t time;
+
+    time = clock(); // Inicia a contagem
+    removerValorSeqV(sequencia, posicao);
+    time = clock() - time;
+
+    return time;
+}
+
+long int clockInsercaoValorSeqV(SequenciaVetor *sequencia, int valor, int posicao){
+    clock_t time;
+
+    time = clock(); // Inicia a contagem
+    inserirValorSeqV(sequencia, valor, posicao);
+    time = clock() - time;
+
+    return time;
+}
+
+long int clockAcessoValorSeqV(SequenciaVetor *sequencia, int posicao){
+    clock_t time;
+
+    time = clock(); // Inicia a contagem
+    acessarValorSeqV(sequencia, posicao);
+    time = clock() - time;
+
+    return time;
 }

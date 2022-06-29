@@ -10,4 +10,5 @@ add_executable(
     ./src/clock.c
     ./src/buscas.c
     ./src/ordenacoes.c
+    ./src/sequencias.c
 )
