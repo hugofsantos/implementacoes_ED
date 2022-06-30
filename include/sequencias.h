@@ -40,4 +40,58 @@ void inserirValorSeqV(SequenciaVetor *sequencia, int valor, int posicao);
  */
 void removerValorSeqV(SequenciaVetor *sequencia, unsigned int posicao);
 
+/**
+ * @brief TAD sequência implementada como um vetor circular
+ * 
+ * @param tamanho Tamanho máximo da sequência
+ * @param n Quantidade de elementos que estão inseridos na sequência
+ * @param offset Índice que representa o início da sequência
+ * @param valores Vetor de valores inteiros da sequência
+ */
+typedef struct{
+    unsigned int tamanho;
+    unsigned int n;
+    unsigned int offset;
+    int* valores;
+}SequenciaVCirc
+
+/**
+ * @brief Procura o valor de uma determinada posição na sequência do vetor circular
+ * 
+ * @param sequencia Referência para sequência implementada como vetor circular
+ * @param posicao Posição do valor que deseja acessar
+ * @return int valor buscado (ou 0 se oa posição for inválida)
+ */
+int acessarValorSeqCirc(SequenciaVCirc *sequencia, int posicao);
+
+/**
+ * @brief Insere no início de uma sequência implementada com vetor circular
+ * 
+ * @param sequencia Referência para a sequência na qual o valor será inserido
+ * @param valor Valor a ser inserido no início da sequência
+ */
+void inserirInicioSeqCirc(SequenciaVCirc *sequencia, int valor);
+
+/**
+ * @brief Insere no fim de uma sequência implementada com vetor circular
+ * 
+ * @param sequencia Referência para a sequência na qual o valor será inserido
+ * @param valor Valor a ser inserido no fim da sequência
+ */
+void inserirFimSeqCirc(SequenciaVCirc *sequencia, int valor);
+
+/**
+ * @brief Remove o primeiro elemento de uma sequência implementada com vetor circular
+ * 
+ * @param sequencia Sequência a ser modificada
+ */
+void removerInicioSeqCirc(SequenciaVCirc *sequencia);
+
+/**
+ * @brief Remove o último elemento de uma sequência implementada com vetor circular
+ * 
+ * @param sequencia Sequência a ser modificada
+ */
+void removerFimSeqCirc(SequenciaVCirc *sequencia);
+
 #endif
