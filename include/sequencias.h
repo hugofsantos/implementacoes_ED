@@ -53,7 +53,7 @@ typedef struct{
     unsigned int n;
     unsigned int offset;
     int* valores;
-}SequenciaVCirc
+}SequenciaVCirc;
 
 /**
  * @brief Procura o valor de uma determinada posição na sequência do vetor circular

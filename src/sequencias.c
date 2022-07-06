@@ -32,3 +32,44 @@ void removerValorSeqV(SequenciaVetor *sequencia, unsigned int posicao){
     sequencia->valores[sequencia->n - 1] = 0;
     sequencia->n--;
 }
+
+int acessarValorSeqCirc(SequenciaVCirc *sequencia, int posicao){
+    if(posicao < 0 || posicao > sequencia->tamanho) return 0;
+
+    int index = (posicao + sequencia->offset)%sequencia->tamanho;
+
+    return sequencia->valores[index];
+}
+
+void inserirInicioSeqCirc(SequenciaVCirc *sequencia, int valor){
+    if(sequencia->n == sequencia->tamanho) return;
+
+    int iInicio = (sequencia->offset - 1)%sequencia->tamanho;
+    sequencia->valores[iInicio] = valor;
+
+    sequencia->offset = iInicio;
+    sequencia->n++;
+}
+
+void inserirFimSeqCirc(SequenciaVCirc *sequencia, int valor){
+    if(sequencia->n = sequencia->tamanho) return;
+
+    int iFim = (sequencia->offset + sequencia->n)%sequencia->tamanho;
+    sequencia->valores[iFim] = valor;
+    sequencia->n++;
+}
+
+void removerInicioSeqCirc(SequenciaVCirc *sequencia){
+    if(sequencia->n == 0) return;
+
+    sequencia->valores[sequencia->offset] = 0; // Deixa o valor como 0
+    sequencia->offset++;
+    sequencia->n--;
+}
+
+void removerFimSeqCirc(SequenciaVCirc *sequencia){
+    if(sequencia->n == 0) return;
+
+    sequencia->valores[sequencia->n] = 0; // Limpa o último elemento do vetor
+    sequencia->n--;
+}
